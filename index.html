@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InterviewIQ AI — Practice spoken English interviews</title>
+<meta name="description" content="Rehearse real interview questions out loud and get a clear breakdown of your fluency, grammar, pronunciation, confidence and vocabulary.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Sora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <!-- ============ HEADER ============ -->
+  <header class="app-header">
+    <div class="app-header__inner">
+      <button class="brand" data-nav="home" aria-label="Go to home">
+        <span class="brand__mark" aria-hidden="true">
+          <span class="brand__bar"></span><span class="brand__bar"></span><span class="brand__bar"></span><span class="brand__bar"></span>
+        </span>
+        <span class="brand__name">InterviewIQ AI</span>
+      </button>
+
+      <nav class="app-nav" aria-label="Primary">
+        <button class="app-nav__link" data-nav="home">Home</button>
+        <button class="app-nav__link" data-nav="setup">Practice</button>
+        <button class="app-nav__link" data-nav="history">History</button>
+      </nav>
+
+      <div class="app-header__actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Switch to light mode" title="Switch theme">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ TOAST CONTAINER ============ -->
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <main id="mainContent">
+
+    <!-- ============================================================ -->
+    <!-- HOME -->
+    <!-- ============================================================ -->
+    <section class="screen screen--active" data-screen="home" id="screen-home">
+      <div class="hero">
+        <div class="hero__waveform" id="heroWave" aria-hidden="true"></div>
+        <div class="hero__content">
+          <p class="eyebrow">Spoken English · Interview rehearsal</p>
+          <h1 class="hero__title">Say it out loud<br><span class="hero__title-accent">before it counts.</span></h1>
+          <p class="hero__subtitle">InterviewIQ AI puts you in front of a question, a microphone and a clock — the same pressure as the real thing — then breaks down exactly how you sounded: fluency, grammar, pronunciation, confidence and vocabulary, scored out of 100.</p>
+          <div class="hero__actions">
+            <button class="btn btn--primary btn--lg" data-nav="setup">
+              Start an interview
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
+            <button class="btn btn--ghost btn--lg" data-nav="history">View my progress</button>
+          </div>
+          <dl class="hero__stats">
+            <div><dt>Question topics</dt><dd>8 categories</dd></div>
+            <div><dt>Companies covered</dt><dd>5 profiles</dd></div>
+            <div><dt>Signals scored</dt><dd>5 dimensions</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <section class="section">
+        <p class="section__eyebrow">How a session runs</p>
+        <h2 class="section__title">Four steps, one sitting</h2>
+        <div class="step-row">
+          <div class="step-card">
+            <span class="step-card__num">01</span>
+            <h3>Choose the format</h3>
+            <p>Pick a length and an interview type — HR, behavioral, technical, or general communication practice.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card__num">02</span>
+            <h3>Check your camera and mic</h3>
+            <p>Confirm video and audio are working before the clock starts, with clear status for both.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card__num">03</span>
+            <h3>Answer out loud</h3>
+            <p>Questions arrive one at a time. Speak naturally — your words are transcribed as you go.</p>
+          </div>
+          <div class="step-card">
+            <span class="step-card__num">04</span>
+            <h3>Read the breakdown</h3>
+            <p>Get an overall score, a per-skill radar, and specific suggestions for the next attempt.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <p class="section__eyebrow">What gets measured</p>
+        <h2 class="section__title">Communication, not just grammar</h2>
+        <div class="feature-grid">
+          <div class="glass-card feature-card">
+            <h3>Fluency &amp; pace</h3>
+            <p>Words per minute, pause frequency and rhythm across your answer.</p>
+          </div>
+          <div class="glass-card feature-card">
+            <h3>Filler words</h3>
+            <p>"Um", "uh" and "like" are counted and weighed against your total word count.</p>
+          </div>
+          <div class="glass-card feature-card">
+            <h3>Vocabulary range</h3>
+            <p>How varied your word choice is, not just how many words you used.</p>
+          </div>
+          <div class="glass-card feature-card">
+            <h3>Pronunciation clarity</h3>
+            <p>Estimated from how confidently the speech recognizer understood you.</p>
+          </div>
+          <div class="glass-card feature-card">
+            <h3>On-camera presence</h3>
+            <p>A lightweight read on eye contact, smiling and posture during your answer.</p>
+          </div>
+          <div class="glass-card feature-card">
+            <h3>Resume-aware questions</h3>
+            <p>Upload a resume and get follow-ups built around your own experience.</p>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SETUP -->
+    <!-- ============================================================ -->
+    <section class="screen" data-screen="setup" id="screen-setup">
+      <div class="screen-head">
+        <button class="back-link" data-nav="home">&larr; Home</button>
+        <div class="stepper" aria-label="Interview progress">
+          <span class="stepper__step is-active">1 · Setup</span>
+          <span class="stepper__step">2 · Check</span>
+          <span class="stepper__step">3 · Interview</span>
+          <span class="stepper__step">4 · Results</span>
+        </div>
+      </div>
+
+      <h1 class="page-title">Set up your session</h1>
+      <p class="page-subtitle">Pick a duration, a type, and — if you'd like — a focus. You can change these every time.</p>
+
+      <div class="setup-grid">
+        <div class="setup-block">
+          <h2 class="setup-block__title">Duration</h2>
+          <div class="choice-row" id="durationChoices" role="radiogroup" aria-label="Interview duration">
+            <button class="choice-card" data-value="60" role="radio" aria-checked="false">
+              <span class="choice-card__value">1</span><span class="choice-card__unit">minute</span>
+            </button>
+            <button class="choice-card" data-value="120" role="radio" aria-checked="false">
+              <span class="choice-card__value">2</span><span class="choice-card__unit">minutes</span>
+            </button>
+            <button class="choice-card is-selected" data-value="300" role="radio" aria-checked="true">
+              <span class="choice-card__value">5</span><span class="choice-card__unit">minutes</span>
+            </button>
+            <button class="choice-card" data-value="600" role="radio" aria-checked="false">
+              <span class="choice-card__value">10</span><span class="choice-card__unit">minutes</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="setup-block">
+          <h2 class="setup-block__title">Interview type</h2>
+          <div class="choice-row choice-row--wide" id="typeChoices" role="radiogroup" aria-label="Interview type">
+            <button class="choice-card choice-card--wide is-selected" data-value="hr" role="radio" aria-checked="true">
+              <span class="choice-card__label">HR Interview</span>
+              <span class="choice-card__desc">Background, motivation, fit</span>
+            </button>
+            <button class="choice-card choice-card--wide" data-value="behavioral" role="radio" aria-checked="false">
+              <span class="choice-card__label">Behavioral</span>
+              <span class="choice-card__desc">Past situations, decisions, outcomes</span>
+            </button>
+            <button class="choice-card choice-card--wide" data-value="technical" role="radio" aria-checked="false">
+              <span class="choice-card__label">Technical</span>
+              <span class="choice-card__desc">Concepts, problem-solving, depth</span>
+            </button>
+            <button class="choice-card choice-card--wide" data-value="general" role="radio" aria-checked="false">
+              <span class="choice-card__label">General Communication</span>
+              <span class="choice-card__desc">Open topics, free practice</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="setup-block">
+          <h2 class="setup-block__title">Topic focus <span class="optional-tag">optional</span></h2>
+          <div class="choice-row choice-row--chips" id="topicChoices" role="radiogroup" aria-label="Topic category">
+            <button class="chip is-selected" data-value="random" role="radio" aria-checked="true">Surprise me</button>
+            <button class="chip" data-value="technology" role="radio" aria-checked="false">Technology</button>
+            <button class="chip" data-value="education" role="radio" aria-checked="false">Education</button>
+            <button class="chip" data-value="sports" role="radio" aria-checked="false">Sports</button>
+            <button class="chip" data-value="environment" role="radio" aria-checked="false">Environment</button>
+            <button class="chip" data-value="leadership" role="radio" aria-checked="false">Leadership</button>
+            <button class="chip" data-value="ai" role="radio" aria-checked="false">Artificial Intelligence</button>
+            <button class="chip" data-value="business" role="radio" aria-checked="false">Business</button>
+            <button class="chip" data-value="science" role="radio" aria-checked="false">Science</button>
+            <button class="chip" data-value="communication" role="radio" aria-checked="false">Communication</button>
+          </div>
+        </div>
+
+        <div class="setup-block">
+          <h2 class="setup-block__title">Company profile <span class="optional-tag">optional</span></h2>
+          <div class="choice-row choice-row--chips" id="companyChoices" role="radiogroup" aria-label="Company profile">
+            <button class="chip is-selected" data-value="none" role="radio" aria-checked="true">None</button>
+            <button class="chip" data-value="google" role="radio" aria-checked="false">Google</button>
+            <button class="chip" data-value="amazon" role="radio" aria-checked="false">Amazon</button>
+            <button class="chip" data-value="microsoft" role="radio" aria-checked="false">Microsoft</button>
+            <button class="chip" data-value="tcs" role="radio" aria-checked="false">TCS</button>
+            <button class="chip" data-value="infosys" role="radio" aria-checked="false">Infosys</button>
+          </div>
+        </div>
+
+        <div class="setup-block">
+          <h2 class="setup-block__title">Resume <span class="optional-tag">optional</span></h2>
+          <p class="setup-block__hint">Add a resume and a few questions will reference your actual background.</p>
+          <div class="resume-drop" id="resumeDrop">
+            <input type="file" id="resumeInput" accept=".txt,.pdf" hidden>
+            <button class="btn btn--secondary" id="resumeBtn">Upload resume (.txt or .pdf)</button>
+            <span class="resume-drop__filename" id="resumeFilename">No file selected</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="setup-actions">
+        <button class="btn btn--primary btn--lg" id="proceedToCheck">
+          Continue to camera check
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CAMERA / MIC CHECK -->
+    <!-- ============================================================ -->
+    <section class="screen" data-screen="check" id="screen-check">
+      <div class="screen-head">
+        <button class="back-link" data-nav="setup">&larr; Setup</button>
+        <div class="stepper" aria-label="Interview progress">
+          <span class="stepper__step">1 · Setup</span>
+          <span class="stepper__step is-active">2 · Check</span>
+          <span class="stepper__step">3 · Interview</span>
+          <span class="stepper__step">4 · Results</span>
+        </div>
+      </div>
+
+      <h1 class="page-title">Check your camera and microphone</h1>
+      <p class="page-subtitle">InterviewIQ AI never uploads your video — everything stays in this browser tab.</p>
+
+      <div class="check-grid">
+        <div class="glass-card camera-card">
+          <div class="camera-frame">
+            <video id="previewVideo" autoplay playsinline muted></video>
+            <div class="camera-frame__placeholder" id="cameraPlaceholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              <p>Camera preview will appear here</p>
+            </div>
+            <div class="camera-frame__badge" id="micLevelBadge">
+              <span class="mic-dot"></span> Mic idle
+            </div>
+          </div>
+          <div class="device-controls">
+            <button class="toggle-btn is-on" id="toggleCamera">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              Camera on
+            </button>
+            <button class="toggle-btn is-on" id="toggleMic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+              Microphone on
+            </button>
+          </div>
+        </div>
+
+        <div class="status-card glass-card">
+          <h2>Status</h2>
+          <ul class="status-list">
+            <li id="statusCamera"><span class="status-dot"></span> Camera: <strong>Not requested</strong></li>
+            <li id="statusMic"><span class="status-dot"></span> Microphone: <strong>Not requested</strong></li>
+            <li id="statusSpeech"><span class="status-dot"></span> Speech recognition: <strong>Not requested</strong></li>
+          </ul>
+          <p class="status-note" id="permissionNote">Your browser will ask for camera and microphone permission. Choose "Allow" on both to continue.</p>
+          <p class="status-note status-note--warn" id="secureContextNote" hidden>Camera, microphone and speech recognition only work when this page is served over <strong>https://</strong> or <strong>http://localhost</strong>. Opening the file directly (file://) will block these APIs — run a local server, e.g. <code>python3 -m http.server</code>, then open <code>http://localhost:8000</code>.</p>
+          <button class="btn btn--secondary" id="retryPermissions">Request access again</button>
+        </div>
+      </div>
+
+      <div class="setup-actions">
+        <button class="btn btn--primary btn--lg" id="proceedToInterview" disabled>
+          Begin interview
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <button class="btn btn--ghost" id="skipPermissions">Continue without camera/mic (text practice)</button>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- INTERVIEW -->
+    <!-- ============================================================ -->
+    <section class="screen" data-screen="interview" id="screen-interview">
+      <div class="interview-bar">
+        <div class="interview-bar__progress">
+          <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+          <div class="interview-bar__meta">
+            <span id="questionCounter">Question 1</span>
+            <span class="timer" id="timerDisplay">05:00</span>
+          </div>
+        </div>
+        <button class="btn btn--danger" id="endInterviewBtn">End interview</button>
+      </div>
+
+      <div class="interview-grid">
+        <div class="interview-main">
+          <div class="glass-card question-card">
+            <p class="question-card__eyebrow" id="questionMeta">HR · Technology</p>
+            <h2 class="question-card__text" id="questionText">Tell me about yourself.</h2>
+            <div class="question-card__actions">
+              <button class="btn btn--secondary" id="skipQuestionBtn">Skip question</button>
+              <button class="btn btn--ghost" id="repeatQuestionBtn">Read again</button>
+            </div>
+          </div>
+
+          <div class="glass-card transcript-card">
+            <div class="transcript-card__head">
+              <h3>Your answer</h3>
+              <div class="listen-controls">
+                <button class="btn btn--primary" id="startListening">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+                  Start speaking
+                </button>
+                <button class="btn btn--secondary" id="stopListening" disabled>Stop</button>
+              </div>
+            </div>
+            <div class="waveform-mini" id="liveWave" aria-hidden="true"></div>
+            <p class="transcript-text" id="transcriptText" aria-live="polite">
+              <span class="transcript-placeholder">Press "Start speaking" and answer the question out loud. Your words will appear here in real time.</span>
+            </p>
+            <p class="transcript-error" id="transcriptError" hidden></p>
+            <div class="transcript-stats" id="transcriptStats">
+              <span><strong id="statWords">0</strong> words</span>
+              <span><strong id="statFillers">0</strong> filler words</span>
+              <span><strong id="statPauses">0</strong> pauses</span>
+              <span><strong id="statWpm">0</strong> wpm</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="interview-side">
+          <div class="glass-card camera-card camera-card--compact">
+            <div class="camera-frame camera-frame--compact">
+              <video id="interviewVideo" autoplay playsinline muted></video>
+              <div class="camera-frame__placeholder" id="interviewCameraPlaceholder">
+                <p>Camera off</p>
+              </div>
+              <div class="overlay-tags" id="overlayTags"></div>
+            </div>
+            <p class="presence-hint" id="presenceHint">On-camera read: warming up…</p>
+          </div>
+
+          <div class="glass-card next-card">
+            <h3>Up next</h3>
+            <p id="nextQuestionPreview">This is your last question.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- RESULTS -->
+    <!-- ============================================================ -->
+    <section class="screen" data-screen="results" id="screen-results">
+      <div class="screen-head">
+        <button class="back-link" data-nav="home">&larr; Home</button>
+        <div class="stepper" aria-label="Interview progress">
+          <span class="stepper__step">1 · Setup</span>
+          <span class="stepper__step">2 · Check</span>
+          <span class="stepper__step">3 · Interview</span>
+          <span class="stepper__step is-active">4 · Results</span>
+        </div>
+      </div>
+
+      <div class="results-head">
+        <div class="score-ring-wrap">
+          <canvas id="overallScoreRing" width="220" height="220"></canvas>
+          <div class="score-ring-label">
+            <span class="score-ring-value" id="overallScoreValue">0</span>
+            <span class="score-ring-max">/ 100</span>
+          </div>
+        </div>
+        <div class="results-head__text">
+          <p class="section__eyebrow" id="resultsMeta">HR Interview · 5 minutes</p>
+          <h1 class="page-title" id="resultsHeadline">Solid first pass</h1>
+          <p class="page-subtitle" id="resultsSummary">Here's exactly where your answer was strong, and what to fix before the next one.</p>
+          <div class="results-head__actions">
+            <button class="btn btn--secondary" id="exportPdfBtn">Export to PDF</button>
+            <button class="btn btn--secondary" id="shareScoreBtn">Share score</button>
+            <button class="btn btn--primary" data-nav="setup">Practice again</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="results-grid">
+        <div class="glass-card chart-card">
+          <h3>Skill breakdown</h3>
+          <canvas id="radarChart"></canvas>
+        </div>
+        <div class="glass-card chart-card">
+          <h3>Score by skill</h3>
+          <canvas id="barChart"></canvas>
+        </div>
+        <div class="glass-card chart-card">
+          <h3>Where your time went</h3>
+          <canvas id="pieChart"></canvas>
+        </div>
+      </div>
+
+      <div class="results-grid results-grid--three">
+        <div class="glass-card insight-card insight-card--good">
+          <h3>Strengths</h3>
+          <ul id="strengthsList"></ul>
+        </div>
+        <div class="glass-card insight-card insight-card--bad">
+          <h3>Weaknesses</h3>
+          <ul id="weaknessesList"></ul>
+        </div>
+        <div class="glass-card insight-card insight-card--suggest">
+          <h3>Suggestions</h3>
+          <ul id="suggestionsList"></ul>
+        </div>
+      </div>
+
+      <div class="glass-card transcript-review">
+        <h3>Full transcript analysis</h3>
+        <div id="fullTranscriptList"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- HISTORY -->
+    <!-- ============================================================ -->
+    <section class="screen" data-screen="history" id="screen-history">
+      <div class="screen-head">
+        <button class="back-link" data-nav="home">&larr; Home</button>
+      </div>
+      <h1 class="page-title">Your progress</h1>
+      <p class="page-subtitle">Every session you complete is saved in this browser so you can track improvement over time.</p>
+
+      <div class="history-toolbar">
+        <input type="search" id="historySearch" placeholder="Search by topic, type or company…" class="search-input">
+        <select id="historyFavFilter" class="select-input">
+          <option value="all">All sessions</option>
+          <option value="favorite">Favorites only</option>
+        </select>
+      </div>
+
+      <div class="glass-card chart-card chart-card--wide" id="progressChartCard">
+        <h3>Score over time</h3>
+        <canvas id="progressChart"></canvas>
+      </div>
+
+      <div class="history-list" id="historyList">
+        <!-- populated by JS -->
+      </div>
+
+      <div class="empty-state" id="historyEmpty" hidden>
+        <h3>No sessions yet</h3>
+        <p>Finish an interview and it'll show up here with a full breakdown.</p>
+        <button class="btn btn--primary" data-nav="setup">Start your first interview</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>InterviewIQ AI — practice runs locally in your browser. Nothing you say is uploaded anywhere.</p>
+  </footer>
+</div>
+
+<!-- ============ SHARE MODAL ============ -->
+<div class="modal" id="shareModal" hidden>
+  <div class="modal__panel glass-card">
+    <button class="modal__close" id="closeShareModal" aria-label="Close">&times;</button>
+    <h3>Share this score</h3>
+    <p>Copy a quick summary to share anywhere you like.</p>
+    <textarea id="shareText" readonly></textarea>
+    <button class="btn btn--primary" id="copyShareText">Copy to clipboard</button>
+  </div>
+</div>
+
+<!-- Chart.js (data visualization) -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<!-- jsPDF (PDF export) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- pdf.js (resume PDF text extraction) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="utils.js"></script>
+<script src="questions.js"></script>
+<script src="media.js"></script>
+<script src="speech.js"></script>
+<script src="analysis.js"></script>
+<script src="advanced.js"></script>
+<script src="resume.js"></script>
+<script src="charts.js"></script>
+<script src="history.js"></script>
+<script src="pdfExport.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
