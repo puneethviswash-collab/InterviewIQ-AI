@@ -28,6 +28,7 @@
     remainingSeconds: 300,
     lastReport: null,
     lastMeta: null,
+    lastSessionId: null,
     cameraGranted: false,
     micGranted: false
   };
@@ -617,7 +618,7 @@
 
     renderResults(report, state.lastMeta, answerRecords);
 
-    History.addSession({
+    const savedSession = History.addSession({
       type: state.setup.type,
       typeLabel: state.lastMeta.typeLabel,
       topic: state.setup.topic,
@@ -638,6 +639,7 @@
       questionHistory: state.questionHistory,
       skippedQuestions: Array.from(state.skippedQuestionTexts)
     });
+    state.lastSessionId = savedSession ? savedSession.id : null;
 
     showScreen("results");
   }
@@ -730,7 +732,10 @@
     el("exportPdfBtn").addEventListener("click", () => {
       if (!state.lastReport) return;
       try {
-        const qaPairs = state.answers.filter(Boolean).map((a) => ({ question: a.question, answerText: a.text }));
+        const qaPairs = state.answers.filter(Boolean).map((a) => ({
+          question: a.question,
+          answerText: a.text
+        }));
         PdfExport.exportReport(state.lastReport, state.lastMeta, qaPairs);
       } catch (e) {
         Utils.toast("Couldn't generate the PDF — the export library may not have loaded.", "error");

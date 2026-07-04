@@ -5,7 +5,8 @@ talk to your camera/mic, and get a scored breakdown of fluency, grammar,
 pronunciation, confidence, and vocabulary — with charts, history, and PDF export.
 
 Everything runs **entirely client-side**. No server, no account, no data
-leaves your browser. Interview history is saved in `localStorage` only.
+leaves your browser by default. Interview history is saved in `localStorage`
+only. The one optional exception is described below.
 
 ## ⚠️ Run this over a local server — do not double-click index.html
 
